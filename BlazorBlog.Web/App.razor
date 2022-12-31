@@ -1,6 +1,7 @@
 ﻿<BootstrapBlazorRoot>
     <Router AppAssembly="@typeof(App).Assembly">
         <Found Context="routeData">
+            <PageTitle>天策</PageTitle>
             <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)"/>
             <FocusOnNavigate RouteData="@routeData" Selector="h1"/>
         </Found>
