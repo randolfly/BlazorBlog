@@ -1,8 +1,14 @@
-namespace BlazorBlog.Shared.Render; 
+namespace BlazorBlog.Shared.Render;
 
-public class RenderAttributes : RenderBase {
+public class RenderAttributes : RenderBase
+{
     /// <summary>
     /// component attributes, eg <code>class: table</code>
     /// </summary>
-    public IEnumerable<KeyValuePair<string, object>>? Attributes { get; set; }
+    public List<KeyValuePair<string, object>>? Attributes { get; set; }
+
+    public RenderAttributes(int sequenceId, List<KeyValuePair<string, object>>? attributes) : base(sequenceId)
+    {
+        Attributes = attributes;
+    }
 }

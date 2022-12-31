@@ -1,0 +1,11 @@
+﻿<h3>ImageTest</h3>
+<p>@Url</p>
+<ImageViewer Url="@Url" FitMode="ObjectFitMode.Contain" Alt="@Alt"></ImageViewer>
+
+@code {
+    [Parameter]
+    public string? Url { get; set; }
+    
+    [Parameter]
+    public string? Alt { get; set; }
+}
