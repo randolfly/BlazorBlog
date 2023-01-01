@@ -5,7 +5,8 @@ namespace BlazorBlog.Web.Shared;
 public sealed partial class MainLayout {
     // menu items
     private List<MenuItem>? Menus { get; set; }
-
+    private bool IsFullSide { get; set; } = false;
+    private string Theme { get; set; } = "themeColor";
     protected override void OnInitialized() {
         base.OnInitialized();
         Menus = GetIconSideMenuItems();

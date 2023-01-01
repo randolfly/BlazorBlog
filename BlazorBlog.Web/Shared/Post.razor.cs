@@ -41,13 +41,6 @@ public partial class Post : ComponentBase
             }
         }
 
-
-        if (renderItem.RenderMarkupContent != null)
-        {
-            builder.AddMarkupContent(renderItem.RenderMarkupContent.SequenceId,
-                renderItem.RenderMarkupContent.MarkupContent);
-        }
-
         if (renderItem.ContentItems.Count != 0)
         {
             foreach (var contentItem in renderItem.ContentItems)
@@ -55,6 +48,13 @@ public partial class Post : ComponentBase
                 var contentRenderFragment = CreatePost(contentItem);
                 builder.AddContent(contentItem.RenderElement.SequenceId, contentRenderFragment);
             }
+        }
+        
+        // render the text content node last
+        if (renderItem.RenderMarkupContent != null)
+        {
+            builder.AddMarkupContent(renderItem.RenderMarkupContent.SequenceId,
+            renderItem.RenderMarkupContent.MarkupContent);
         }
 
         if (renderItem.RenderElement.Element == "ImageTest")

@@ -24,7 +24,10 @@ public class RenderItemService : IRenderItemService
         //Create a virtual request to specify the document to load (here from our fixed string)
         var doc = await context.OpenAsync(req => req.Content(html));
 
-        return ParseDom(doc.Body);
+        var parseDom = ParseDom(doc.Body);
+        // change the outside body element to div
+        parseDom.RenderElement.Element = "div";
+        return parseDom;
     }
 
     public string ParseMarkdownToHtml(string markdown)
