@@ -10,6 +10,7 @@
   <ItemGroup>
     <PackageReference Include="BootstrapBlazor" Version="7.1.9-beta03" />
     <PackageReference Include="BootstrapBlazor.FontAwesome" Version="7.0.2" />
+    <PackageReference Include="MathJaxBlazor" Version="2.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.1" PrivateAssets="all" />
   </ItemGroup>

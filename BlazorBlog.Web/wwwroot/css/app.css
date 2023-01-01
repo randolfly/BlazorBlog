@@ -6,6 +6,13 @@ html, body {
     height: 100%;
 }
 
+/*104.67px: means the other fragment height*/
+.tabs-body-content {
+    max-height: calc(100vh - 105px);
+    overflow-y: auto;
+}
+
+
 h1:focus {
     outline: none;
 }

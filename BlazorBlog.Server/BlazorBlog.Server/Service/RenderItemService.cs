@@ -33,7 +33,26 @@ public class RenderItemService : IRenderItemService
     public string ParseMarkdownToHtml(string markdown)
     {
         // convert markdown to html
-        var pipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
+        var pipeline = new MarkdownPipelineBuilder()
+            // .UseAbbreviations()
+            // .UseAutoIdentifiers()
+            // .UseCitations()
+            // .UseCustomContainers()
+            .UseDefinitionLists()
+            .UseFigures()
+            // .UseFooters()
+            .UseFootnotes()
+            .UseGridTables()
+            .UseMediaLinks()
+            // .UsePipeTables()
+            // .UseListExtras()
+            .UseTaskLists()
+            // .UseDiagrams()
+            // .UseAutoLinks()
+            // .UseGenericAttributes()
+            .UseYamlFrontMatter()
+            // .UseBootstrap()
+            .Build();
         var html = Markdown.ToHtml(markdown, pipeline);
         return html;
     }
@@ -59,7 +78,7 @@ public class RenderItemService : IRenderItemService
             RenderMarkupContent = new RenderMarkupContent(sequenceId++, markupContent),
             RenderAttributes = new RenderAttributes(sequenceId++, keyValuePairs)
         };
-        
+
         // test self-define rule
         // NOTE the html parer doesn't recognize the button node, so need to add self-defined rules in parser
         if (htmlNode.NodeName.ToLower() == "button")

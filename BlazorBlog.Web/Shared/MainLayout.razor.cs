@@ -18,7 +18,6 @@ public sealed partial class MainLayout {
             new MenuItem
             {
                 Icon = "fa-solid fa-gear",
-                Url = "/test",
                 Text = "test",
                 Items = new List<MenuItem>
                 {
@@ -31,29 +30,28 @@ public sealed partial class MainLayout {
                     new MenuItem
                     {
                         Icon = "fa-solid fa-gear",
-                        Url = "/test",
-                        Text = "test",
+                        Url = "/",
+                        Text = "index",
                     }
                 }
             },
             new MenuItem
             {
                 Icon = "fa-solid fa-gear",
-                Url = "/hello-blog",
                 Text = "test",
                 Items = new List<MenuItem>
                 {
                     new MenuItem
                     {
                         Icon = "fa-solid fa-gear",
-                        Url = "/hello-blog",
-                        Text = "test",
+                        Url = "/fetchdata",
+                        Text = "fetchdata",
                     },
                     new MenuItem
                     {
                         Icon = "fa-solid fa-gear",
-                        Url = "/hello-blog",
-                        Text = "test",
+                        Url = "/counter",
+                        Text = "counter",
                     },
                     new MenuItem
                     {
